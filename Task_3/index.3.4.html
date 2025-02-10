@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HW 3.4.</title>
+</head>
+<!--#OeT7t3uUMFi-->
+<!-- - За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом і індексом всередині.-->
+
+
+<body>
+<script>
+    let sids;
+    sids = [
+        {
+            hybrid: 'Арлен',
+            originator: 'АРТ Агро',
+            growing: 'послуги'
+        }, {
+            hybrid: 'Ваксі',
+            originator: 'Стасі Насіння',
+            growing: 'послуги'
+        }, {
+            hybrid: 'Дрівія',
+            originator: 'АРТ Агро',
+            growing: 'послуги'
+        }, {
+            hybrid: ' Арлен',
+            originator: 'АРТ Агро',
+            growing: 'ліцензія'
+        }, {
+            hybrid: 'СТАРОФ',
+            originator: 'Іфагрі',
+            growing: 'ліцензія'
+        }, {
+            hybrid: 'НІКОЛАДЖ',
+            originator: 'Іфагрі',
+            growing: 'ліцензія'
+        }, {
+            hybrid: 'Вархол',
+            originator: 'Іфагрі',
+            growing: 'ліцензія'
+        }, {
+            hybrid: 'Сканер',
+            originator: 'Іфагрі',
+            growing: 'ліцензія'
+        }, {
+            hybrid: 'Адевей',
+            originator: 'Лімагрейн',
+            growing: 'ліцензія'
+        }, {
+            hybrid: 'СІЛВЕРКЛАУД',
+            originator: 'Іфагрі',
+            growing: 'ліцензія'
+        }, {
+            hybrid: 'Фабріс',
+            originator: 'АРТ Агро',
+            growing: 'ліцензія'
+        }, {
+            hybrid: 'LG_1',
+            originator: 'Лімагрейн',
+            growing: 'ліцензія'
+        }, {
+            hybrid: 'Санрок',
+            originator: 'АРТ Агро',
+            growing: 'ліцензія'
+        }, {
+            hybrid: 'Астросіло',
+            originator: 'РВА',
+            growing: 'ліцензія'
+        }, {
+            hybrid: 'Ервінга',
+            originator: 'РВА',
+            growing: 'ліцензія'
+        }, {
+            hybrid: 'LG_2',
+            originator: 'Лімагрейн ',
+            growing: 'ліцензія'
+        }, {
+            hybrid: 'LG_3',
+            originator: 'Лімагрейн ',
+            growing: 'ліцензія'
+        }, {
+            hybrid: 'LG_4',
+            originator: 'Лімагрейн ',
+            growing: 'ліцензія'
+        }, {
+            hybrid: 'LG_5',
+            originator: 'Лімагрейн ',
+            growing: 'ліцензія'
+        }, {
+            hybrid: 'LG_55',
+            originator: 'Лімагрейн',
+            growing: 'ліцензія'
+        },
+    ];
+
+    let i=0;
+    while (i<sids.length) {
+       let sid = sids[i];
+        document.write(`<h1>MAIS ${sid.originator} - ${sid.hybrid}</h1>`)
+        i++;
+    }
+</script>
+</body>
+</html>

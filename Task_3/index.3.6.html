@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HW 3.6.</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+
+        }
+        .product-card{
+            width: 300px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border: 2px solid gray;
+            border-radius: 30px;
+            transition: transform 2s;
+
+        }
+        .product-card:hover{
+           transform: scale(1.1);
+            color: darkblue;
+            transition: transform 2s;
+        }
+        .product-card img{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+
+</head>
+<body>
+<!--#Hdjws7E-->
+<!--Використовуючи данні з масиву, за допомоги document.write та циклу-->
+<!--побудувати структуру по шаблону-->
+<!--Великими літерами прописанні властивості об'єкту які потрібно впровадити в шаблон-->
+
+
+<script>
+
+    let products;
+    products = [
+        {
+            title: 'milk',
+            price: 22,
+            image: 'https://marino.ae/cdn/shop/files/Almarai-UHT-Long-Life-Full-Fat-Milk-1Lx12-_1-carton_-Marino.AE-229636656.jpg?v=1707118344&width=750'
+        },
+        {
+            title: 'juice',
+            price: 27,
+            image: 'https://www.alrawabifoods.com/media/catalog/product/cache/e7b7f0155f84b9cdfcf0d3d6a982b64c/8/0/800ml-orange-front-600x600.jpg'
+        },
+        {
+            title: 'tomato',
+            price: 47,
+            image: 'https://fruit-trade.com/storage/products/tomato-800x800.webp'
+        },
+        {
+            title: 'tea',
+            price: 15,
+            image: 'https://ridnavoda.com.ua/wp-content/uploads/2021/06/863862561_w640_h640_chernyj-chaj-lipton.png'
+        },
+    ];
+
+
+    for (let i = 0; i < products.length; i++) {
+        const product = products[i];
+    document.write(`<div class="product-card">
+    <h3 class="product-title">${product.title}- Price ${product.price}</h3>
+    <img src="${product.image} " alt="" class="product-image">
+</div>`);
+    }
+</script>
+
+
+</body>
+</html>

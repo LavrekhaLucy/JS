@@ -13,17 +13,11 @@
 
 <script>
     let x=false;
-    if (x === 0) {
-        console.log(x = 'default')
-    } else if (x === null) {
-        console.log(x = 'default')
-    } else if (x === undefined) {
-        console.log(x = 'default')
-    } else if (x === false) {
-        console.log(x = 'default')
-    } else if (x === '') {
-        console.log(x = 'default')
-    }
+    if (x === 0 || x === null || x === undefined || x === '')
+    {x = 'default';}
+
+
+
 </script>
 </body>
 </html>

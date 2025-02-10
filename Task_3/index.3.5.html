@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HW 3.5.</title>
+</head>
+<body>
+<!--#vLSZKMlO-->
+<!-- - Використовуючи данні з масиву, за допомоги document.write та циклу-->
+<!--побудувати структуру по шаблону-->
+<!--Масив:-->
+<!--ШАБЛОН:-->
+<!--<ul>-->
+<!--    <li>ITEM OF ARRAY</li>-->
+<!--    &lt;!&ndash;-->
+<!--        і тд інші об'єкти масиву-->
+<!--         ...-->
+<!--         ...-->
+<!--         ...-->
+<!--    &ndash;&gt;-->
+<!--</ul>-->
+<!--замість 'ITEM OF ARRAY' підставити елемент з масиву щоб получився цілий список з даними з масиву-->
+
+<script>
+    let listOfItems =
+        ['html', 'css', 'javascript', 'mysql', 'mongodb', 'react', 'angular', 'node.js'];
+
+    document.write(`<ul>`);
+
+    for (let list of listOfItems) {
+        document.write(`<li>${list}</li>`);
+    }
+    document.write(`</ul>`);
+
+</script>
+</body>
+</html>

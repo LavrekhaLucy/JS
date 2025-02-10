@@ -5,28 +5,60 @@
     <title>HW 2.3.</title>
 </head>
 <body>
+<!--#sA3Gg1sCp-->
+<!-- - Створити 3 об'єкти які описують книги.
+ Поля об'єкту : title ,pageCount, genre, authors.
+  Поле "автори" - являється  масивом. Кожен автор має поля name та age.-->
+
 <script>
-    let book1={
-        title:'Charlie and the chocolate Factory',
-        pageCount:'240',
-        genre:'Fantasy',
-        author:['Roald Dahl','45' ]
+    let book1 = {
+        title: 'Charlie and the chocolate Factory',
+        pageCount: '240',
+        genre: 'Fantasy',
+        authors: [
+            {
+                name: 'Roald Dahl',
+                age: 45
+            },
+            {
+                name: 'Roald Dahl',
+                age: 45
+            }
+        ]
     }
     console.log(book1);
 
-    let book2={
-        title:'Murder on the Orient Express',
-        pageCount:'240',
-        genre:'Detective',
-        author:['Agatha Christie', '86']
+    let book2 = {
+        title: 'Murder on the Orient Express',
+        pageCount: '240',
+        genre: 'Detective',
+        authors: [
+            {
+                name: 'Agatha Christie',
+                age: 86
+            },
+            {
+                name: 'Agatha Christie',
+                age: 86
+            }
+        ]
     }
     console.log(book2);
 
-    let book3={
-        title:'Moby-Dick',
-        pageCount:'672',
-        genre:'Adventures',
-        author:['Herman Melville', '58']
+    let book3 = {
+        title: 'Moby-Dick',
+        pageCount: '672',
+        genre: 'Adventures',
+        authors: [
+            {
+                name: 'Herman Melville',
+                age: 58
+            },
+            {
+                name: 'Herman Melville',
+                age: 58
+            }
+        ]
     }
     console.log(book3);
 
