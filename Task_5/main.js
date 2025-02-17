@@ -30,21 +30,19 @@
 // #SIdMd0hQ
 // - створити функцію яка приймає масив та виводить кожен його елемент
 
-        function books(array){
-                for (const book of array) {
-                        console.log(book);
-                }
+        const foobar=(array)=> {
+                for (const item of array) {
+                        console.log(item);}
         }
+        foobar(['foo', 'bar', 'baz', 'foo']);
 
 
 
 // #59g0IsA
 // - створити функцію яка створює параграф з текстом. Текст задати через аргумент
 
-        function writer(productTitle) {
-                document.write(`
-                          <p>${productTitle}</p>`);
-        }
+        let writer=(productTitle)=>
+        {document.write(`<p>${productTitle}</p>`);}
         writer('Pepper');
         writer('Apple');
         writer('Cheese');
@@ -54,13 +52,13 @@
 // #hOL6126
 // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий
 
-        function productListVeg(productTitle) {
+        let productListVeg = (productTitle) => {
                 document.write(
                     `<ul>
                           <li>${productTitle}</li>
                           <li>${productTitle}</li>
                           <li>${productTitle}</li>
-                        </ul>`);
+                    </ul>`);
         }
         productListVeg('Tomato');
 
@@ -70,11 +68,11 @@
 // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий.
 // Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл)
 
-        function milkProduct(productTitle, quantity) {
-                document.write(`<ul>`);
+        let milkProduct=(productTitle, quantity)=>
+        {document.write(`<ul>`);
                 for (let i = 0; i < quantity; i++)
                         document.write(`<li>${productTitle}</li>`);
-                document.write(`</ul>`);
+        document.write(`</ul>`);
         }
         milkProduct('Cheese',50);
 
@@ -83,14 +81,14 @@
 // #gEFoxMMO
 // - створити функцію яка приймає масив примітивних елементів (числа, стрінги, булеві), та будує для них список
 
-        function List(array) {
+        let elementList=(array)=>{
                 document.write(`<ul>`);
                 for (const item of array) {
                         document.write(`<li>${item}</li>`)
                 }
                 document.write(`</ul>`);
         }
-        List([150, 25, 30, 'name', true, false, 3256])
+        elementList([150, 25, 30, 'name', true, false, 3256])
 
 
 
@@ -98,7 +96,7 @@
 // - створити функцію яка приймає масив об'єктів з наступними полями id, name, age,
 // та виводить їх в документ. Для кожного об'єкту окремий блок.
 
-        function getUsersList(users) {
+       let getUsersList=(users)=>{
                 for (const user of users) {
                         document.write(`<div>
                          ${user.id} ${user.name} ${user.age}
@@ -117,17 +115,12 @@
 //     #pghbnSB
 // - створити функцію яка повертає найменьше число з масиву
 
-
-        function arrayNumb(numbers) {
-                let min = numbers[0];
-                for (const number of numbers) {
-                        if (number < min) {
-                                min = number
-                        }
-                }
+        const array=(numbers)=>{
+        let min = numbers[0]
+        for (const number of numbers) if (number < min) {min = number}
                 return min;
         }
-        console.log(arrayNumb([10, 20, 30, 50, 1, 13]));
+        console.log(array([10, 20, 30, 50, 1, 13]));
 
 
 
@@ -135,14 +128,13 @@
 // - створити функцію sum(arr)яка приймає масив чисел, сумує значення елементів масиву та повертає його.
 // Приклад sum([1,2,10]) //->13
 
-        function sumM(arr){
-                let total=0;
-                for (const number of arr) {
-                        total=total+number;
-                }
-                return total;
+        const sum=(arr)=>{
+            let total=0;
+        for (const number of arr)
+        {total=total+number;}
+        return total;
         }
-        console.log(sumM([1,2,10]));
+        console.log(sum([1,2,10]));
 
 
 
@@ -151,13 +143,13 @@
 // Приклад  swap([11,22,33,44],0,1) //=> [22,11,33,44]
 
 
-        function flatter(arr,index1,index2,) {
+       const swap=(arr,index1,index2,) =>{
                 let temp=arr[index1];
                 arr [index1]=arr [index2];
                 arr [index2]=temp;
                 return arr;
         }
-        console.log(flatter([11,22,33,44],0,1));
+        console.log(swap([11,22,33,44],0,1));
 
 
 
@@ -165,13 +157,10 @@
 // - Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
 // Приклад exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD') // => 250
 
-        function currency(sumUAH, currencyValues,exchangeCurrency){
+       const currency=(sumUAH, currencyValues,exchangeCurrency)=>{
                 let chooseCurrency;
-                for (const item of currencyValues ){
-                        if (item.currency === exchangeCurrency){
-                                chooseCurrency = item;
-                        }}
-
+                for (const item of currencyValues )
+                {if (item.currency === exchangeCurrency){chooseCurrency = item;}}
                 return sumUAH/chooseCurrency.value;
         }
         console.log(currency(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD'))
