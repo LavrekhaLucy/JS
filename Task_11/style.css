@@ -1,0 +1,12 @@
+#recipesDiv{
+    background-color: #99d39e;
+  }
+
+#recipesDiv img{
+    width: 200px;
+    height: 200px;
+}
+.allRecipes{
+    border: solid 3px dimgrey ;
+    padding-left: 30px;
+}

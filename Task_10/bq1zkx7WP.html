@@ -36,9 +36,9 @@
 
   const addNumbers=(function (){
           e.preventDefault();
-          addNumber+=`${10} UAH`;
           let timerId = setInterval(addNumber,5000);
-          {
+
+          {addNumber+=`${10} UAH`;
           if (addNumber === `${200}) UAH`) {
               clearInterval(timerId);
           }
