@@ -29,24 +29,26 @@
   // зміна ціни відбувається тільки на перезавантаження, які відбулись пізніше ніж 10 секунд після попереднього.
   // При перезавантаженні, яке відбулось раніше ніж минуло 10 секунд - нічого не відбувається
 
-  let addNumber = `${100} UAH`;
+      let number = 100;
+      let addNumber = 10;
+      let finishNum = 150;
+            console.log(number);
 
-  localStorage.setItem('number', addNumber);
-  document.getElementById("newBlock").innerHTML = addNumber;
+      localStorage.setItem('number', number);
+      document.getElementById("newBlock").innerHTML = number;
 
-  const addNumbers=(function (){
-          e.preventDefault();
-          let timerId = setInterval(addNumber,5000);
 
-          {addNumber+=`${10} UAH`;
-          if (addNumber === `${200}) UAH`) {
-              clearInterval(timerId);
-          }
-      }
-      }
-  )
+     const addMoney = setInterval( () => {
 
- console.log(addNumbers);
+          number = number + addNumber||number +addNumber||number +addNumber||number +addNumber||number +addNumber;
+         number === finishNum && clearInterval(addMoney);
+       console.log(number);
+
+         localStorage.setItem('number', number);
+         document.getElementById("newBlock").innerHTML = number;
+      },10000);
+
+
 
 
 </script>
