@@ -14,6 +14,7 @@ const arr =[1,2,3,4,5,];
 const array =['ola','hello','hi','chao','привіт'];
 const arrayAll =[1,2,3,4,5,'ola','hello','hi','chao','привіт', true, false,true, false, true];
 
+
 console.log(arr);
 console.log(array);
 console.log(arrayAll);
@@ -105,8 +106,9 @@ console.log(users [5]);
 //
 
 
-     const num= [2,17,13,6,22,31,45,66,100,-18];
-     // 1.
+      const num= [2,17,13,6,22,31,45,66,100,-18];
+
+// 1.
        let i = 0;
        while (i < num.length){
            let number = (num[i]);
@@ -124,8 +126,6 @@ console.log(users [5]);
     //             j % 2 !== 0;
     //             console.log(j);
     //         }
-
-
 
     // 4.
         for (let i=0; i < num.length; i++){
@@ -158,7 +158,6 @@ console.log(users [5]);
         //8.
       num.reverse();
         console.log(num);
-
 
 
 //
@@ -399,7 +398,7 @@ let books = [
         let emptyArray =[];
         let start = 100;
 
-        for(start; start>0; start--){
+        for(start; start > 0; start--){
            emptyArray.push(start--);
         }
         console.log(emptyArray);
@@ -409,10 +408,10 @@ let books = [
 //     b. заповнити його 50 непарними числами за допомоги циклу.
 
         let result =[];
-        let startnon = 101;
+        let startNon = 101;
 
-        for(startnon; startnon>1; startnon--){
-            result.push(startnon--);
+        for(startNon; startNon > 1; startNon--){
+            result.push(startNon--);
         }
         console.log(result);
 
@@ -431,7 +430,7 @@ let books = [
         console.log(randomArr);
 
 //
-// d. Заповнити масив 20ма рандомними чисалами в діапазоні від 8 до 732 (Google: Generate random number JS)
+// d. Заповнити масив 20ма рандомними числами в діапазоні від 8 до 732 (Google: Generate random number JS)
 
 
         const randomNumber = (start = 8, end = 732) =>{
@@ -447,77 +446,80 @@ let books = [
 
 // 2. Вивести за допомогою console.log кожен третій елемент
 
-    for (let i=0; i < emptyArray.length; i++){
-    if (i % 3 === 0){
-
+    for (let i=1; i < emptyArray.length; i+=2){
         console.log(i);
     }
-}
 
-//
+
+///////////////////////////////////////////////////////////////////////////////////////////
 // 3. Вивести за допомогою console.log кожен третій елемент тільки якщо цей елемент є парним.
+
+
+       let arrNewNum =[1,52,3,4,35,16,27,8,9,100,22,54,26,33,44,71,20,13,19];
+
+    for (let i = 0; i < arrNewNum.length; i++) {
+        // for (let number of arrNewNum) {
+                if (i % 2 === 0)
+                    console.log(i);
+        // }
+    }
+
 
 //
 // 4. Вивести за допомогою console.log кожен третій елемент тільки якщо цей елемент є парним та
 //    записати їх в новий масив
 //
 // 5. Вивести кожен елемент масиву, сусід справа якого є парним
-//
+
 // EXAMPLE: [ 1, 2, 3, 5, 7, 9, 56, 8, 67 ] -> Має бути виведено 1, 9, 56
-//
+///////////////////////////////////////////////////////////////////////////////
+
+
 // 6. Є масив з числами [100,250,50,168,120,345,188],
 // Які характеризують вартість окремої покупки. Обрахувати середній чек.
 //
-//
-//
+
+    const checkSum = [100,250,50,168,120,345,188].reduce(function (a, b) {
+    return a + b;
+   });
+    console.log(checkSum);
+
+
 // 7. Створити масив з рандомними значеннями,
 // помножити всі його елементи на 5 та перемістити їх в інший масив.
 
+    let arrRandom = [ 1, 2, 3, 5, 7, 9, 56, 8, 67 ].reduce(function (a,b)
+    { return a*b;
+    });
+    console.log(arrRandom);
+    let arrRandomElse = [];
+    arrRandomElse.push(arrRandom);
+    console.log(arrRandomElse);
 
-
+    ///////////////////////////////////////////////////////////////////////
 // 8. Створити масив з будь якими значеннями (стрінги, числа, і тд…).
 // пройтись по ньому, і якщо елемент є числом – додати його в інший масив.
 //
 
+          const arrIfNumbers = [1, 2, 3, 38,40, 'chao', 'привіт', true, false];
+
+        for (const element of arrIfNumbers) {
+            if( element === +element){
+                console.log(element);
+
+            let arrIfNewNumbers =[];
+            arrIfNewNumbers.push(element);
+            console.log(arrIfNewNumbers);}}
+/////////////////////////////////////////////////////
+
+
 
 // – Дано 2 масиви з рівною кількістю об’єктів.
-//
 //     Масиви:
-//
-// let usersWithId = [
-//
-//     {id: 1, name: ‘vasya’, age: 31, status: false},
-//
-// {id: 2, name: ‘petya’, age: 30, status: true},
-//
-// {id: 3, name: ‘kolya’, age: 29, status: true},
-//
-// {id: 4, name: ‘olya’, age: 28, status: false}
-//
-// ];
-//
-//
-//
-// let citiesWithId = [
-//
-//     {user_id: 3, country: ‘USA’, city: ‘Portland’},
-//
-// {user_id: 1, country: ‘Ukraine’, city: ‘Ternopil’},
-//
-// {user_id: 2, country: ‘Poland’, city: ‘Krakow’},
-//
-// {user_id: 4, country: ‘USA’, city: ‘Miami’}
-//
-// ];
-//
-//
-//
 // З’єднати в один об’єкт користувача та місто з відповідними “id” та “user_id” .
-//
 // Записати цей об’єкт в новий масив
-//
 // Example:
-//
+
 //         let usersWithCities = [
 //
 //             {
@@ -532,11 +534,42 @@ let books = [
 //                  }
 //                 TO BE CONTINUED …..]
 
+let usersWithId = [
 
-//
+    {id: 1, name: 'vasya', age: 31, status: false},
+
+    {id: 2, name: 'petya', age: 30, status: true},
+
+    {id: 3, name: 'kolya', age: 29, status: true},
+
+    {id: 4, name: 'olya', age: 28, status: false}
+
+    ];
+let citiesWithId = [
+
+    {user_id: 3, country: 'USA', city: 'Portland'},
+
+    {user_id: 1, country: 'Ukraine', city: 'Ternopil'},
+
+    {user_id: 2, country: 'Poland', city: 'Krakow'},
+
+    {user_id: 4, country: 'USA', city: 'Miami'}
+
+    ];
+
+let usersWithCities =  usersWithId.concat(citiesWithId);
+console.log(usersWithCities);
+
+
 // – Взяти масив з 10 чисел або створити його.
 // Вивести в консоль тільки ті елементи, значення яких є парними.
+        let foo = [22,5,8,14,13,15,11,19,31,88]
 
+       for (const number of foo) {
+           if (number % 2 === 0){
+                console.log(number);
+            }
+        }
 
 
 //
@@ -544,12 +577,31 @@ let books = [
 // – Взяти масив з 10 чисел або створити його.
 // Створити 2й порожній масив. За допомогою будь-якого циклу скопіювати значення одного масиву в інший.
 //
+     let oneArr = [22,5,8,14,13,15,11,19,31,88];
+        let copyOneArr = [];
+        for (i=0; i < oneArr.length; i++){
+        copyOneArr [i] = oneArr[i];
+    }
+         console.log(copyOneArr);
+
+
+
 //
+// – Дано масив: [ ‘a’, ‘b’, ‘c’] . За допомогою циклу for зібрати всі букви в слово. ??????
 //
+// – Дано масив: [ ‘a’, ‘b’, ‘c’] . За допомогою циклу while зібрати всі букви в слово. ??????
 //
-//
-// – Дано масив: [ ‘a’, ‘b’, ‘c’] . За допомогою циклу for зібрати всі букви в слово.
-//
-// – Дано масив: [ ‘a’, ‘b’, ‘c’] . За допомогою циклу while зібрати всі букви в слово.
-//
-// – Дано масив: [ ‘a’, ‘b’, ‘c’] . За допомогою циклу for of зібрати всі букви в слово.
+// – Дано масив: [ ‘a’, ‘b’, ‘c’] . За допомогою циклу for of зібрати всі букви в слово. ?????
+
+
+
+        let str =[ 'a', 'b', 'c'];
+        console.log(str.join(''));
+
+
+        let vog = 'bond';
+        let split = vog.split('');
+        console.log(split);
+
+
+
