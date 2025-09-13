@@ -213,11 +213,14 @@ console.log(weather);
 //     Якщо змінна x не дорівнює нулю, виведіть ‘Вірно’, інакше виведіть ‘Невірно’.
 //     Перевірте  скрипт при a, що дорівнює 1, 0, -3
 
-let x = 0;
- x !== 0? console.log('Correct'): console.log('Incorrect');
+// let x = 0;
+//  x !== 0? console.log('Correct'): console.log('Incorrect');
+
+let x = +prompt('Enter (1, 0, -3');
+x !== 0? console.log('Correct'): console.log('Incorrect');
+
 
  let a = 5;
-
  if (a === 1) {
      console.log('One');
  }
@@ -237,19 +240,20 @@ let x = 0;
 // – Дано змінну time яка рівна числу від 0 до 59. Потрібно написати код, який перевірить, до якої четверті години попадає число
 //
 // (в першу, другу, третю або четверту частину години).
-//
-// let time = 48
-//     if (0 <= 15){
-//         message('First decade');
-//     }else if(16 <= 30){
-//         console.log('Second decade');
-//     } else if (31 <= 45){
-//         console.log('Third decade');
-//     }else if(46 <= 59){
-//         console.log('Forth decade');
-//     }
-//
-//     console.log(time(message)); виправити!!!
+
+      let time = 52;
+
+        if (time >= 0 && time <= 15) {
+            console.log('First decade');
+        } else if (time >= 16 && time <= 30) {
+            console.log('Second decade');
+        } else if (time >= 31 && time <= 45) {
+            console.log('Third decade');
+        } else if (time >= 46 && time <= 59) {
+            console.log('Fourth decade');
+        }else {
+            console.log('The time has 59 minutes');
+        }
 
 
 
@@ -259,6 +263,16 @@ let x = 0;
 //
 // – У змінній day дано якесь число від 1 до 31. Потрібно визначити, у яку половину (декаду) місяця потрапляє це число (у першу, другу чи третю).
 
+let number = 15;
+        if (number >=0 && number <= 10) {
+            console.log('First decade of month');
+        }else if (number >= 11 && number <= 20) {
+            console.log('Second decade of month');
+        }else if (number >= 21 && number <= 31) {
+            console.log('Third decade of month');
+        } else {
+            console.log('The month has 31 days');
+        }
 
 
 
@@ -266,7 +280,35 @@ let x = 0;
 //
 // – Скласти розклад на тиждень за домопогою switch. Користувач вводить порядковий номер дня тижня і на екрані відображається інфа, що заплановано на цей день (можна замість плану на день, назву дня англійською).
 
+        let day = Number(prompt('Enter day number 1-7'));
 
+        switch (day) {
+            case 0:
+                day = 'Sunday';
+                break;
+            case 1:
+                day = 'Monday';
+                break;
+            case 2:
+                day = 'Tuesday';
+                break;
+            case 3:
+                day = 'Wednesday';
+                break;
+            case 4:
+                day = 'Thursday';
+                break;
+            case 5:
+                day = 'Friday';
+                break;
+            case 6:
+                day = 'Saturday';
+                break;
+            default:
+                day = 'Unknown day';
+        }
+
+        console.log("Today is " + day);
 
 
 // #uwsz1RnTQJ1
@@ -276,6 +318,18 @@ let x = 0;
 //     Потрібно знайти та вивести максимальне число з тих двох .
 //
 //     Також потрібно врахувати, коли введені рівні числа.
+
+
+        let d = 6;
+        let f = 1;
+
+        if (d > f) {
+            console.log(d);
+        } else if (d < f) {
+            console.log(f);
+        } else if (d === f) {
+            console.log(d, f);
+        }
 
 
 
@@ -288,7 +342,41 @@ let x = 0;
 
 
 
+        let x2 = NaN;
+        if (!x2) {
+            x2 = "default";
+
+        }
+        console.log(x2);
+
 
 // #awLXL6TBzg
 //
 // з файлу arrays.js ( лежить у вкладеннях)  взяти масив coursesAndDurationArray. За допомогою іф перевірити кожен його елемент на тривалість навчання. У випадку, якщо тривалість довша за 5 місяців, вивести в консоль “Супер”.
+
+let coursesAndDurationArray = [
+    {title: 'JavaScript Complex', monthDuration: 5},
+    {title: 'Java Complex', monthDuration: 6},
+    {title: 'Python Complex', monthDuration: 6},
+    {title: 'QA Complex', monthDuration: 4},
+    {title: 'FullStack', monthDuration: 7},
+    {title: 'Frontend', monthDuration: 4}
+];
+if (coursesAndDurationArray[0].monthDuration > 5) {
+    console.log(coursesAndDurationArray[0].title, 'Super');
+}
+if (coursesAndDurationArray[1].monthDuration > 5) {
+    console.log(coursesAndDurationArray[1].title, 'Super');
+}
+if (coursesAndDurationArray[2].monthDuration > 5) {
+    console.log(coursesAndDurationArray[2].title, 'Super');
+}
+if (coursesAndDurationArray[3].monthDuration > 5) {
+    console.log(coursesAndDurationArray[3].title, 'Super');
+}
+if (coursesAndDurationArray[4].monthDuration > 5) {
+    console.log(coursesAndDurationArray[4].title, 'Super');
+}
+if (coursesAndDurationArray[5].monthDuration > 5) {
+    console.log(coursesAndDurationArray[5].title, 'Super');
+}
