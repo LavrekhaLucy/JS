@@ -122,10 +122,9 @@ console.log(users [5]);
     // 3.
     //         let j = 0;
     //         while (j < num.length){
-    //             j++;
     //             j % 2 !== 0;
     //             console.log(j);
-    //         }
+    //         } j++;
 
     // 4.
         for (let i=0; i < num.length; i++){
