@@ -1,0 +1,39 @@
+.users-container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 колонки */
+    gap: 20px; /* відстань між картками */
+}
+
+.users-box {
+    border: 1px solid #444;
+    border-radius: 10px;
+    padding: 15px;
+    background: #f9f9f9;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.user-block h2 {
+    margin: 0 0 10px;
+    font-size: 18px;
+}
+
+.user-block h3 {
+    margin: 0 0 15px;
+    font-size: 16px;
+    color: #333;
+}
+
+.address-block p {
+    margin: 4px 0;
+    font-size: 14px;
+}
+
+/* 📱 Адаптив: на вузьких екранах картки стануть в 1 колонку */
+@media (max-width: 700px) {
+    .users-container {
+        grid-template-columns: 1fr;
+    }
+}

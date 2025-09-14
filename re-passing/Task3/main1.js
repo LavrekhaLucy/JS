@@ -10,17 +10,42 @@
 // – з 5 значень стрічкового, числового та булевого типу
 //
 // – та вивести його в консоль
+
+
+let arr =[5,8,47,-2,0,'hello','fine','happy','enjoy','finally', [1,2,3,4,5,'1','2','3','4','5',true, false]]
+console.log(arr);
+
+
+
+
 //
 // #4aDbSgh
 //
 // — Створити пустий масив. Наповнити його будь-якими значеннями, звертаючись до конкретного індексу. Вивести в консоль
-//
-//
-//
-//
-//
-//
-//
+
+let emptyArray= [];
+
+ emtyArray = [ 'asd'];
+ console.log(emptyArray);
+
+emtyArray[1]=  'qwe';
+console.log(emtyArray);
+
+emtyArray[2]=  'hello';
+console.log(emtyArray);
+
+emtyArray[3]=  'hi';
+console.log(emtyArray);
+
+emtyArray[4]=  'finally';
+console.log(emtyArray);
+
+
+
+
+
+
+
 // #qLQLJSeN7i
 //
 // – є масив [2,17,13,6,22,31,45,66,100,-18] :
@@ -43,7 +68,10 @@
 //
 // 9. всі попередні завдання (окрім 8), але у зворотньому циклі (задом наперед)
 //
-//
+
+
+
+
 //
 // #yHAwJOyiC
 //

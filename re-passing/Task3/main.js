@@ -2,23 +2,45 @@
 //
 // – За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом всередині
 
-
-
+for ( let i =0; i <10; i++){
+    document.write( `<div>Hello</div>`)
+    }
 
 // #TYj7ncx
 //
 // – За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом і індексом всередині
 
-
+// let users = [
+//     {name: 'vasya', age: 31, status: false},
+//     {name: 'petya', age: 30, status: true},
+//     {name: 'kolya', age: 29, status: true},
+//     {name: 'olya', age: 28, status: false},
+//     {name: 'max', age: 30, status: true},
+//     {name: 'anya', age: 31, status: false},
+//     {name: 'oleg', age: 28, status: false},
+//     {name: 'andrey', age: 29, status: true},
+//     {name: 'masha', age: 30, status: true},
+//     {name: 'olya', age: 31, status: false}
+// ];
 //
-// for (i=0; i<10; i++) {
-//     document.write(`<div>${i}</div>`);
+//
+// for (let user of users) {
+//      document.write(`<div>${user.name}</div>`);
 // }
-// console.log(document);
+
 
 // #uzkt71dp
 //
 // – За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом всередині.
+
+
+    let d = 0;
+    while (d < 20) {
+        d++;
+        console.log(d);
+        document.write(`<h1>Mais</h1>`)
+    }
+
 
 
 
@@ -26,6 +48,98 @@
 // #OeT7t3uUMFi
 //
 // – За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом і індексом всередині.
+
+let sids = [
+    {
+        hybrid: 'Арлен',
+        originator: 'АРТ Агро',
+        growing: 'послуги'
+    }, {
+        hybrid: 'Ваксі',
+        originator: 'Стасі Насіння',
+        growing: 'послуги'
+    }, {
+        hybrid: 'Дрівія',
+        originator: 'АРТ Агро',
+        growing: 'послуги'
+    }, {
+        hybrid: ' Арлен',
+        originator: 'АРТ Агро',
+        growing: 'ліцензія'
+    }, {
+        hybrid: 'СТАРОФ',
+        originator: 'Іфагрі',
+        growing: 'ліцензія'
+    }, {
+        hybrid: 'НІКОЛАДЖ',
+        originator: 'Іфагрі',
+        growing: 'ліцензія'
+    }, {
+        hybrid: 'Вархол',
+        originator: 'Іфагрі',
+        growing: 'ліцензія'
+    }, {
+        hybrid: 'Сканер',
+        originator: 'Іфагрі',
+        growing: 'ліцензія'
+    }, {
+        hybrid: 'Адевей',
+        originator: 'Лімагрейн',
+        growing: 'ліцензія'
+    }, {
+        hybrid: 'СІЛВЕРКЛАУД',
+        originator: 'Іфагрі',
+        growing: 'ліцензія'
+    }, {
+        hybrid: 'Фабріс',
+        originator: 'АРТ Агро',
+        growing: 'ліцензія'
+    }, {
+        hybrid: 'LG_1',
+        originator: 'Лімагрейн',
+        growing: 'ліцензія'
+    }, {
+        hybrid: 'Санрок',
+        originator: 'АРТ Агро',
+        growing: 'ліцензія'
+    }, {
+        hybrid: 'Астросіло',
+        originator: 'РВА',
+        growing: 'ліцензія'
+    }, {
+        hybrid: 'Ервінга',
+        originator: 'РВА',
+        growing: 'ліцензія'
+    }, {
+        hybrid: 'LG_2',
+        originator: 'Лімагрейн ',
+        growing: 'ліцензія'
+    }, {
+        hybrid: 'LG_3',
+        originator: 'Лімагрейн ',
+        growing: 'ліцензія'
+    }, {
+        hybrid: 'LG_4',
+        originator: 'Лімагрейн ',
+        growing: 'ліцензія'
+    }, {
+        hybrid: 'LG_5',
+        originator: 'Лімагрейн ',
+        growing: 'ліцензія'
+    }, {
+        hybrid: 'LG_55',
+        originator: 'Лімагрейн',
+        growing: 'ліцензія'
+    },
+];
+
+let i =0;
+while (i < sids.length) {
+    let sid = sids[i];
+    console.log(sid);
+    i++;
+    document.write(`<h1>${sid.hybrid}</h1>`);
+}
 
 
 
@@ -61,13 +175,20 @@
 //
 //         –>
 //
-//     </ul>
-//
+//     </ul>//
 //
 //
 // замість ‘ITEM OF ARRAY’ підставити елемент з масиву, щоб вийшов цілий список з даними з масиву
 
+        let listOfItems = ['html', 'css', 'javascript', 'mysql', 'mongodb', 'react', 'angular', 'node.js'];
 
+        for (let listOfItem of listOfItems) {
+            document.write(`<ul>
+        <li>${listOfItem}</li>
+        </ul>`);
+
+        }
+        console.log(listOfItems);
 
 
 
@@ -81,7 +202,7 @@
 // Великими літерами прописанні властивості об’єкту які потрібно впровадити в шаблон
 //
 //
-//
+
 // let products = [
 //
 //     {
@@ -140,37 +261,57 @@
 //
 // Замість TITLE PRICE IMAGE – підставити відповідні поля з об’єкту
 
+let products = [
+
+    {
+        title: 'milk',
+        price: 22,
+    image: 'https://img.freepik.com/free-vector/realistic-milk-boxes-isolated_1284-35984.jpg?w=360'
+
+    },
+
+    {
+    title: 'juice',
+    price: 27,
+    image: 'https://images.cdn.shop.supervalu.ie/detail/1027074003_1'
+
+    },
+
+    {
+    title: 'tomato',
+    price: 47,
+    image: 'https://png.pngtree.com/png-vector/20230903/ourmid/pngtree-fruit-fresh-tomato-png-image_9959799.png'
+
+    },
+
+    {
+
+    title: 'tea',
+    price: 15,
+    image: 'https://www.sas.am/upload/Sh/imageCache/257/764/7649281195308089.webp'
+
+    },
+
+    ];
+
+
+for (let product of products) {
+    document.write(`<div class ='product-card'>
+<h3 class ='product-title'>${product.title} ${product.price} UAH</h3>
+<img src="${product.image}" alt=""  class ='product-image'>
+
+</div>`);
+
+}
+
+
+
 
 
 // #4WrHwFTEop0
 //
 // є масив
 //
-// let users = [
-//
-//     {name: ‘vasya’, age: 31, status: false},
-//
-// {name: ‘petya’, age: 30, status: true},
-//
-// {name: ‘kolya’, age: 29, status: true},
-//
-// {name: ‘olya’, age: 28, status: false},
-//
-// {name: ‘max’, age: 30, status: true},
-//
-// {name: ‘anya’, age: 31, status: false},
-//
-// {name: ‘oleg’, age: 28, status: false},
-//
-// {name: ‘andrey’, age: 29, status: true},
-//
-// {name: ‘masha’, age: 30, status: true},
-//
-// {name: ‘olya’, age: 31, status: false},
-//
-// {name: ‘max’, age: 31, status: true}
-//
-// ];
 //
 // за допомогою циклу вивести:
 //
@@ -182,8 +323,49 @@
 
 
 
+    let users = [
+        {name: 'vasya', age: 31, status: false},
+        {name: 'petya', age: 30, status: true},
+        {name: 'kolya', age: 29, status: true},
+        {name: 'olya', age: 28, status: false},
+        {name: 'max', age: 30, status: true},
+        {name: 'anya', age: 31, status: false},
+        {name: 'oleg', age: 28, status: false},
+        {name: 'andrey', age: 29, status: true},
+        {name: 'masha', age: 30, status: true},
+        {name: 'olya', age: 31, status: false},
+        {name: 'max', age: 31, status: true}
+    ];
+
+    // for (let user of users) {
+    //     if (user.status === true) {
+    //         document.write(`<div
+    //                 <h1> ${user.name} ${user.status} </h1>
+    //         </div>`)
+    //     }
+
+                // for (let user of users) {
+                //     if (user.status === false) {
+                //         document.write(`<div
+                //               <h2>${user.name} ${user.status} </h2>
+                //     </div>`)
+                //     }
+                // }
+
+                            for (let user of users) {
+                                if (user.age > 30) {
+                                    document.write(`<div
+                                         <h3> ${user.name} ${user.age}</h3>
+                                </div>`)
+                                }
+                            }
 
 
+        
+
+
+
+//
 // =============
 //
 //
@@ -213,7 +395,7 @@
 // </div>
 //
 // </div>
-//
+
 //
 //
 // <!–
@@ -235,3 +417,266 @@
 //
 //
 // за допомогою стилів, побудувати сітку по 2 об’єктах в рядок
+
+        let usersList = [
+            {
+                id: 1,
+                name: 'Leanne Graham',
+                username: 'Bret',
+                email: 'Sincere@april.biz',
+                address: {
+                    street: 'Kulas Light',
+                    suite: 'Apt. 556',
+                    city: 'Gwenborough',
+                    zipcode: '92998-3874',
+                    geo: {
+                        lat: '-37.3159',
+                        lng: '81.1496'
+                    }
+                },
+                phone: '1-770-736-8031 x56442',
+                website: 'hildegard.org',
+                company: {
+                    name: 'Romaguera-Crona',
+                    catchPhrase: 'Multi-layered client-server neural-net',
+                    bs: 'harness real-time e-markets'
+                }
+            },
+            {
+                id: 2,
+                name: 'Ervin Howell',
+                username: 'Antonette',
+                email: 'Shanna@melissa.tv',
+                address: {
+                    street: 'Victor Plains',
+                    suite: 'Suite 879',
+                    city: 'Wisokyburgh',
+                    zipcode: '90566-7771',
+                    geo: {
+                        lat: '-43.9509',
+                        lng: '-34.4618'
+                    }
+                },
+                phone: '010-692-6593 x09125',
+                website: 'anastasia.net',
+                company: {
+                    name: 'Deckow-Crist',
+                    catchPhrase: 'Proactive didactic contingency',
+                    bs: 'synergize scalable supply-chains'
+                }
+            },
+            {
+                id: 3,
+                name: 'Clementine Bauch',
+                username: 'Samantha',
+                email: 'Nathan@yesenia.net',
+                address: {
+                    street: 'Douglas Extension',
+                    suite: 'Suite 847',
+                    city: 'McKenziehaven',
+                    zipcode: '59590-4157',
+                    geo: {
+                        lat: '-68.6102',
+                        lng: '-47.0653'
+                    }
+                },
+                phone: '1-463-123-4447',
+                website: 'ramiro.info',
+                company: {
+                    name: 'Romaguera-Jacobson',
+                    catchPhrase: 'Face to face bifurcated interface',
+                    bs: 'e-enable strategic applications'
+                }
+            },
+            {
+                id: 4,
+                name: 'Patricia Lebsack',
+                username: 'Karianne',
+                email: 'Julianne.OConner@kory.org',
+                address: {
+                    street: 'Hoeger Mall',
+                    suite: 'Apt. 692',
+                    city: 'South Elvis',
+                    zipcode: '53919-4257',
+                    geo: {
+                        lat: '29.4572',
+                        lng: '-164.2990'
+                    }
+                },
+                phone: '493-170-9623 x156',
+                website: 'kale.biz',
+                company: {
+                    name: 'Robel-Corkery',
+                    catchPhrase: 'Multi-tiered zero tolerance productivity',
+                    bs: 'transition cutting-edge web services'
+                }
+            },
+            {
+                id: 5,
+                name: 'Chelsey Dietrich',
+                username: 'Kamren',
+                email: 'Lucio_Hettinger@annie.ca',
+                address: {
+                    street: 'Skiles Walks',
+                    suite: 'Suite 351',
+                    city: 'Roscoeview',
+                    zipcode: '33263',
+                    geo: {
+                        lat: '-31.8129',
+                        lng: '62.5342'
+                    }
+                },
+                phone: '(254)954-1289',
+                website: 'demarco.info',
+                company: {
+                    name: 'Keebler LLC',
+                    catchPhrase: 'User-centric fault-tolerant solution',
+                    bs: 'revolutionize end-to-end systems'
+                }
+            },
+            {
+                id: 6,
+                name: 'Mrs. Dennis Schulist',
+                username: 'Leopoldo_Corkery',
+                email: 'Karley_Dach@jasper.info',
+                address: {
+                    street: 'Norberto Crossing',
+                    suite: 'Apt. 950',
+                    city: 'South Christy',
+                    zipcode: '23505-1337',
+                    geo: {
+                        lat: '-71.4197',
+                        lng: '71.7478'
+                    }
+                },
+                phone: '1-477-935-8478 x6430',
+                website: 'ola.org',
+                company: {
+                    name: 'Considine-Lockman',
+                    catchPhrase: 'Synchronised bottom-line interface',
+                    bs: 'e-enable innovative applications'
+                }
+            },
+            {
+                id: 7,
+                name: 'Kurtis Weissnat',
+                username: 'Elwyn.Skiles',
+                email: 'Telly.Hoeger@billy.biz',
+                address: {
+                    street: 'Rex Trail',
+                    suite: 'Suite 280',
+                    city: 'Howemouth',
+                    zipcode: '58804-1099',
+                    geo: {
+                        lat: '24.8918',
+                        lng: '21.8984'
+                    }
+                },
+                phone: '210.067.6132',
+                website: 'elvis.io',
+                company: {
+                    name: 'Johns Group',
+                    catchPhrase: 'Configurable multimedia task-force',
+                    bs: 'generate enterprise e-tailers'
+                }
+            },
+            {
+                id: 8,
+                name: 'Nicholas Runolfsdottir V',
+                username: 'Maxime_Nienow',
+                email: 'Sherwood@rosamond.me',
+                address: {
+                    street: 'Ellsworth Summit',
+                    suite: 'Suite 729',
+                    city: 'Aliyaview',
+                    zipcode: '45169',
+                    geo: {
+                        lat: '-14.3990',
+                        lng: '-120.7677'
+                    }
+                },
+                phone: '586.493.6943 x140',
+                website: 'jacynthe.com',
+                company: {
+                    name: 'Abernathy Group',
+                    catchPhrase: 'Implemented secondary concept',
+                    bs: 'e-enable extensible e-tailers'
+                }
+            },
+            {
+                id: 9,
+                name: 'Glenna Reichert',
+                username: 'Delphine',
+                email: 'Chaim_McDermott@dana.io',
+                address: {
+                    street: 'Dayna Park',
+                    suite: 'Suite 449',
+                    city: 'Bartholomebury',
+                    zipcode: '76495-3109',
+                    geo: {
+                        lat: '24.6463',
+                        lng: '-168.8889'
+                    }
+                },
+                phone: '(775)976-6794 x41206',
+                website: 'conrad.com',
+                company: {
+                    name: 'Yost and Sons',
+                    catchPhrase: 'Switchable contextually-based project',
+                    bs: 'aggregate real-time technologies'
+                }
+            },
+            {
+                id: 10,
+                name: 'Clementina DuBuque',
+                username: 'Moriah.Stanton',
+                email: 'Rey.Padberg@karina.biz',
+                address: {
+                    street: 'Kattie Turnpike',
+                    suite: 'Suite 198',
+                    city: 'Lebsackbury',
+                    zipcode: '31428-2261',
+                    geo: {
+                        lat: '-38.2386',
+                        lng: '57.2232'
+                    }
+                },
+                phone: '024-648-3804',
+                website: 'ambrose.net',
+                company: {
+                    name: 'Hoeger LLC',
+                    catchPhrase: 'Centralized empowering task-force',
+                    bs: 'target end-to-end models'
+                }
+            }
+        ];
+
+    document.write(`<div class='users-container'>`);
+
+    for (const usersListElement of usersList) {
+        document.write(`
+           <div class="users-box">
+              <div class="user-block">
+             
+             <h2>${usersListElement.id} ${usersListElement.name} ${usersListElement.username}</h2>
+            
+             <h3>${usersListElement.email} ${usersListElement.phone}</h3>
+            
+             <div class='address-block'>
+            
+             <p>City - ${usersListElement.address.city}</p>
+            
+             <p>Street - ${usersListElement.address.street}</p>
+            
+             <p>Suite - ${usersListElement.address.suite}</p>
+            
+             <p>Zipcode - ${usersListElement.address.zipcode}</p>
+             
+ 
+            </div>
+            </div>)
+          </div>`);
+
+
+    }
+    document.write(`</div>`);
