@@ -91,15 +91,65 @@ while (s < array3.length){
 
 // 4. перебрати циклом for та вивести  числа тільки з непарним індексом
 let array4 = [2,17,13,6,22,31,45,66,100,-18];
-for(let z=1; z < array4.length; z++){
+for(let z=1; z < array4.length; ){
+ z+=2;
  console.log(array4[z]);
-  z+=2;
+
  }
 
-
+//
 // 5. перебрати циклом while та вивести  числа тільки парні  значення
 
+  let array5 = [2,17,13,6,22,31,45,66,100,-18];
+  let num = 0;
+  while (num < array5.length){
+  if (array5[num] % 2 === 0){
+   console.log(array5[num]);
+  }
+   num++;
 
+  }
+// 6. перебрати циклом for та вивести  числа тільки парні  значення
+    let array6 = [2,17,13,6,22,31,45,66,100,-18];
+    for (let i=0; i<array6.length; i++){
+     if (array6[i] % 2 === 0){
+      console.log(array6[i]);
+     }
+    }
+
+// 7. замінити кожне число, кратне 3, на слово “okten”
+   let array7 = [2, 17, 13, 6, 22, 31, 45, 66, 100, -18];
+   for (let i = 0; i < array7.length; i++) {
+    if (array7[i] % 3 === 0) {
+     array7[i] = 'okten';
+
+    }
+   }
+   console.log(array7);
+
+// 8. вивести масив у зворотньому порядку.
+
+let array8 = [2, 17, 13, 6, 22, 31, 45, 66, 100, -18];
+for (let i= array8.length-1 ; i>=0; i--){
+ console.log(array8[i]);
+}
+
+
+// . всі попередні завдання (окрім 8), але у зворотньому циклі (задом наперед)
+
+let array9 = [2, 17, 13, 6, 22, 31, 45, 66, 100, -18];
+for (let  i = array9.length-1; i>=0;  i--){
+ console.log(array9[i]);
+}
+
+let array10 = [2,17,13,6,22,31,45,66,100,-18];
+let g = array10-1;
+while (g >=0){
+ if(s % 2 !== 0){
+  console.log(array10[g]);
+ }
+ g--;
+}
 
 
 
