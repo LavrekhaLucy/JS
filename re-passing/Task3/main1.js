@@ -109,6 +109,7 @@ for(let z=1; z < array4.length; ){
    num++;
 
   }
+
 // 6. перебрати циклом for та вивести  числа тільки парні  значення
     let array6 = [2,17,13,6,22,31,45,66,100,-18];
     for (let i=0; i<array6.length; i++){
@@ -143,79 +144,235 @@ for (let  i = array9.length-1; i>=0;  i--){
 }
 
 let array10 = [2,17,13,6,22,31,45,66,100,-18];
-let g = array10-1;
+let g = array10.length-1;
 while (g >=0){
- if(s % 2 !== 0){
+ if(g % 2 !== 0){
   console.log(array10[g]);
  }
  g--;
 }
 
+let array11 = [2,17,13,6,22,31,45,66,100,-18];
+let q = array11.length-1;
+while (q >=0){
+ if (array11[q] % 2 === 0){
+  console.log(array11[q]);
+ }
+ q--;
 
+}
+let array12 = [2, 17, 13, 6, 22, 31, 45, 66, 100, -18];
+for (let i = array12.length-1; i >=0; i--) {
+ if (array12[i] % 3 === 0) {
+  array12[i] = 'okten';
 
+ }
+}
+console.log(array12);
 
 
 //
 // #yHAwJOyiC
 //
 // – Створити масив з 10 числових елементів. Вивести в консоль всі його елементи в циклі.
+
+let numArr = [2,17,13,6,22,31,45,66,100,-18];
+for (const number of numArr) {
+ console.log(number);
+
+}
+
 //
 //     #GamKju89ob
 //
 // – Створити масив з 10 строкових елементів. Вивести в консоль всі його елементи в циклі.
+
+let stringArr = ['asd','fgh','fsds','trust','hope','love','begin','the end','true','false','docker']
+for (const string of stringArr) {
+ console.log(string);
+
+}
+
+
 //
 //     #Bm76xmg
 //
 // – Створити масив з 10 елементів будь-якого типу. Вивести в консоль всі його елементи в циклі.
+
+let arrAnother = [2,17,13,'begin','the end',true,false,'docker',100,-18];
+for (const arrAnotherElement of arrAnother) {
+ console.log(arrAnotherElement);
+
+}
+
 //
 //     #u3vmD0YJXh
 //
 // – Створити масив з 10 елементів числового, стрічкового і булевого типу. За допомогою if та typeof вивести тільки булеві елементи
+
+let arrNew = [2,17,13,'begin','the end',true,false,'docker',100,-18];
+for (const arrNewElement of arrNew) {
+ if( typeof arrNewElement === 'boolean'){
+  console.log(arrNewElement, typeof arrNewElement);
+ }
+
+}
+
 //
 // #9stMq2ou
 //
 // – Створити масив з 10 елементів числового, стрічкового і булевого типу. За допомогою if та typeof вивести тільки числові елементи
+
+let arrNewOne = [2,17,13,'begin','the end',true,false,'docker',100,-18];
+for (const arrNewOneElement of arrNewOne) {
+ if (typeof  arrNewOneElement === 'number'){
+  console.log(arrNewOneElement, typeof arrNewOneElement);
+ }
+
+}
+
 //
 // #mK4pmM4
 //
 // – Створити масив з 10 елементів числового, стрічкового і булевого типу. За допомогою if та typeof вивести тільки рядкові елементи
+
+let arrayNew = [2,17,13,'begin','the end',true,false,'docker',100,-18];
+for (const arrayNewElement of arrayNew) {
+ if( typeof arrayNewElement === 'string'){
+  console.log(arrayNewElement, typeof arrayNewElement);
+ }
+}
+
+
 //
 //
 //
 // #0pm3EyTKy9
 //
-// – Створити порожній масив. Наповнити його 10 елементами (різними за типами) через звернення до конкретних індексів. Вивести в консоль всі його елементи в циклі.
+// – Створити порожній масив.
+// Наповнити його 10 елементами (різними за типами) через звернення до конкретних індексів. Вивести в консоль всі його елементи в циклі.
+
+
+let emptyArr= [];
+emptyArr[0] = 'okten';
+emptyArr[1] = 1;
+emptyArr[2] = 2;
+emptyArr[3] = false;
+emptyArr[4] = '4';
+emptyArr[5] = 5;
+emptyArr[6] = true;
+emptyArr[7] = 'seven';
+emptyArr[8] = 8;
+emptyArr[9] = 'nine';
+
+for (const emptyElement of emptyArr) {
+ console.log(emptyElement);
+
+}
 //
 //     #mDMWMW5a
 //
 // – Створити цикл for на 10  ітерацій з кроком 1. Вивести поточний номер кроку через console.log та document.write
+
+
+document.write(`<ul>`)
+for (let i=0; i<10; i++){
+ console.log('Step', i);
+ document.write(`<li>${i}</li>`)
+}
+document.write(`</ul>`)
+
+
+
 //
 // #4sXhaa5YMM
 //
 // – Створити цикл for на 100 ітерацій з кроком 1. Вивести поточний номер кроку через console.log та document.write
+
+
+document.write(`<ul>`)
+for (let i = 0; i < 100; i++) {
+ console.log('Крок', i);
+ document.write(`<li>${i}</li>`)
+
+}
+document.write(`</ul>`)
 //
 // #s24slNyz7
 //
 // – Створити цикл for на 100 ітерацій з кроком 2. Вивести поточний номер кроку через console.log та document.write
+
+document.write(`<ul>`)
+for (let i = 0; i < 100; i+=2) {
+ console.log('Step', i);
+ document.write(`<li>${i}</li>`)
+}
+document.write(`</ul>`)
+
+
+
 //
 // #zananT5FR1
 //
 // – Створити цикл for на 100 ітерацій. Вивести тільки парні кроки. через console.log + document.write
+
+
+document.write(`<ul>`)
+for (let i = 0; i < 100; i++) {
+ if(i % 2 === 0){
+  console.log('Крок', i);
+  document.write(`<li>${i}</li>`)
+ }
+}
+document.write(`</ul>`)
+
+
 //
 // #Tfrwls7FM
 //
 // – Створити цикл for на 100 ітерацій. Вивести тільки непарні кроки. через console.log + document.write
-//
-//
-//
-//
+
+document.write(`<ul>`)
+for (let i = 0; i < 100; i++) {
+ if(i % 2 !== 0){
+  console.log('Step',i);
+  document.write(`<li>${i}</li>`)
+ }
+}
+document.write(`</ul>`)
+
+
+
 //
 // #reLkOkTB29Q
 //
 // створити масив книжок (назва, кількість сторінок, автори , жанри).
 //
+
+
+let books =[
+ {title:'Adventures Sherlock Holmes',
+ pages: 325,
+ authors:['Arthur ConanDoyle','Arthur ConanDoyle' ],
+ genres: [ 'detective']
+ },
+
+ {title:'Through the Looking Glass, and What Alice found there',
+ pages: 192,
+ authors:[ 'Lewis Carroll'],
+ genres: ["Children's novels, Fantasy novels"]
+ },
+
+ {title:'The Hound of the Baskervilles',
+ pages: 374,
+ authors:[ 'Arthur Conan Doyle'],
+ genres: [ 'detective, adventures']},
+]
+console.log(books);
+
+
 // – знайти найбільшу книжку.
-//
+
 // – знайти книжку/ки з найбільшою кількістю жанрів
 //
 // – знайти книжку/ки з найдовшою назвою
@@ -224,7 +381,16 @@ while (g >=0){
 //
 // – знайти книжку/ки, які писав 1 автор
 //
-//
+
+
+
+
+
+
+
+
+
+
 //
 // 1. Створити пустий масив та :
 //
