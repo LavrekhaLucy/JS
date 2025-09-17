@@ -399,6 +399,17 @@ console.log(books);
 //     b. заповнити його 50 непарними числами за допомоги циклу.
 //
 //     c. Заповнити масив 20-ма рандомними числами. (Google: Generate random number JS)
+
+
+
+// function randomNumber(min, max) {
+//  return Math.random() * (max - min) + min;
+// }
+// let randomNumber = Math.random();
+// console.log(randomNumber); // e.g., 0.87654321
+
+
+
 //
 // d. Заповнити масив 20-ма рандомними числами в діапазоні від 8 до 732 (Google: Generate random number JS)
 //

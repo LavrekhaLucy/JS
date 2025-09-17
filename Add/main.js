@@ -421,6 +421,8 @@ let books = [
             return Math.floor(Math.random() * (end - start + 1) + start);
         };
 
+
+
         let randomArr = [];
 
         for (let i= 0; i< 20; i++) {
