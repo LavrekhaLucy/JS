@@ -417,9 +417,7 @@ let books = [
 //
 //   c. Заповнити масив 20ма рандомними числами. (Google: Generate random number JS)
 
-        const getRandom = (start = 1, end = 100) => {
-            return Math.floor(Math.random() * (end - start + 1) + start);
-        };
+
 
 
 

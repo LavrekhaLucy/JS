@@ -359,8 +359,8 @@ let books =[
 
  {title:'Through the Looking Glass, and What Alice found there',
  pages: 192,
- authors:[ 'Lewis Carroll'],
- genres: ["Children's novels, Fantasy novels"]
+ authors:[ 'Lewis Carroll','Lewis Carroll','Lewis Carroll','Lewis Carroll'],
+ genres: ["Children's novels, Fantasy novels","Adventure"]
  },
 
  {title:'The Hound of the Baskervilles',
@@ -373,19 +373,38 @@ console.log(books);
 
 // – знайти найбільшу книжку.
 
+ let biggestBook = books.reduce((acc, curr) =>{
+  return acc.pages > curr.pages ? acc:curr;
+ });
+ console.log("The biggest book:",biggestBook);
+
+
 // – знайти книжку/ки з найбільшою кількістю жанрів
+
+// let maxGenres = Math.max(...books.map(book=> book.genres.length));
 //
-// – знайти книжку/ки з найдовшою назвою
+// let largestNumberOfGenres = books.filter(book=> book.genres.length === maxGenres);
 //
+// console.log("The largest number of genres:", largestNumberOfGenres);
+
+
+let biggestGenres = books.reduce((acc, curr) =>{
+ return acc.genres.length > curr.genres.length ? acc:curr;
+});
+console.log("The biggest genres:",biggestGenres);
+
+
 // – знайти книжку/ки, які писали 2 автори
-//
+
+let twoAuthors = books.find((book)=>book.authors.length === 2);
+console.log("The two authors:",twoAuthors);
+
 // – знайти книжку/ки, які писав 1 автор
-//
 
 
+let oneAuthors = books.find ((book) => book.authors.length === 1);
 
-
-
+console.log("The one authors:",oneAuthors);
 
 
 
@@ -395,61 +414,179 @@ console.log(books);
 // 1. Створити пустий масив та :
 //
 //     a. заповнити його 50 парними числами за допомоги циклу.
-//
+
+let emptyArrOne = [];
+for (let i = 0; i < 100; i++) {
+ if (i % 2 === 0){
+  emptyArrOne.push(i);
+ }
+}
+console.log(emptyArrOne);
+
+
+let emptyArr1 = [];
+for (let i = 0; i < 100; i +=2 ) {
+ emptyArr1.push(i);
+}
+console.log(emptyArr1);
+
+
 //     b. заповнити його 50 непарними числами за допомоги циклу.
+//
+let emptyArrTwo = [];
+for (let i = 1; i <100; i++) {
+ if (i % 2 !== 0){
+  emptyArrTwo.push(i);
+ }
+}
+console.log(emptyArrTwo);
+
+let emptyArr2 = [];
+for (let i = 1; i < 100; i += 2) {
+ emptyArr2.push(i);
+}
+
+console.log(emptyArr2);
+
+
 //
 //     c. Заповнити масив 20-ма рандомними числами. (Google: Generate random number JS)
 
+const getRandom = (start = 1, end = 100) => {
+ return Math.floor(Math.random() * (end - start + 1) + start);
+};
+
+let randomArr = [];
+for (let i = 0; i < 20; i++) {
+ randomArr.push(getRandom());
+
+}
+console.log(randomArr);
 
 
-// function randomNumber(min, max) {
-//  return Math.random() * (max - min) + min;
-// }
-// let randomNumber = Math.random();
-// console.log(randomNumber); // e.g., 0.87654321
-
+let arrRndm = [];
+for (let i = 0; i < 20; i++) {
+ arrRndm.push(Math.floor(Math.random() * (100 - 1 + 1) + 1));
+}
+console.log(arrRndm);
 
 
 //
 // d. Заповнити масив 20-ма рандомними числами в діапазоні від 8 до 732 (Google: Generate random number JS)
+
+const newGetRandom = (min = 8, max = 732) =>{
+ return Math.floor(Math.random() * (max - min + 1) + min);
+}
+let arrForRandomNumbers = [];
+for (let i = 0; i < 20; i++) {
+ arrForRandomNumbers.push(newGetRandom());
+}
+console.log(arrForRandomNumbers);
+
+
+let arrForRandomNumbers1 = [];
+
+for (let i = 0; i < 20; i++) {
+ arrForRandomNumbers1.push(Math.floor(Math.random() * (732 - 8 + 1) + 8));
+}
+
+console.log(arrForRandomNumbers1);
+
 //
 // 2. Вивести за допомогою console.log кожен третій елемент
+
+let numberArr = [2,17,13,6,22,31,45,66,100,-18,45,82,45,"kji",true];
+for (let i = 2; i < numberArr.length; i+=3) {
+ console.log(numberArr[i]);
+}
+
+
 //
 // 3. Вивести за допомогою console.log кожен третій елемент, тільки якщо цей елемент є парним.
+let numberArr1 = [2,17,13,6,22,31,45,66,100,-18,45,82,45,"kji",true];
+
+for (let i = 2; i < numberArr1.length; i+=3) {
+ if (numberArr1[i] % 2 === 0){
+  console.log(numberArr1[i]);
+ }
+}
+
 //
 // 4. Вивести за допомогою console.log кожен третій елемент, тільки якщо цей елемент є парним, та записати їх в новий масив
+let newArr2 = [];
+let numberArr2 = [2,17,13,6,22,31,45,66,100,-18,45,82,45,"kji",true];
+for (let i = 2; i < numberArr2.length; i+=3) {
+ if (typeof numberArr2[i] === 'number'&& numberArr2[i] % 2 === 0){
+  newArr2.push(numberArr2[i]);
+ }
+}console.log(newArr2);
+
+
 //
 // 5. Вивести кожен елемент масиву, сусід справа якого є парним
 //
 // EXAMPLE: [ 1, 2, 3, 5, 7, 9, 56, 8, 67 ] -> Має бути виведено 1, 9, 56
+
+let newArr3 = [1, 2, 3, 5, 7, 9, 56, 8, 67];
+for (let i = 0; i < newArr3.length-1; i++) {
+ if (newArr3[i+1] % 2 === 0){
+  console.log(newArr3[i]);
+}}
+
+
+
 //
 // 6. Є масив з числами [100,250,50,168,120,345,188], Які характеризують вартість окремої покупки. Обрахувати середній чек.
-//
-//
+
+let summArray = [100,250,50,168,120,345,188];
+const summCheck = summArray.reduce((acc, curr) =>{
+ return acc + curr;
+})
+console.log(summCheck);
+
+
+
 //
 // 7. Створити масив з рандомними значеннями, помножити всі його елементи на 5 та перемістити їх в інший масив.
+let emptyRandomNumbers = [];
+let randomNum = [1, 2, 3, 5, 7, 9, 56, 8, 67];
+let multiplyByFive = randomNum.map (num => num * 5);
+console.log(multiplyByFive);
+emptyRandomNumbers.push(multiplyByFive);
+
+
+
+
 //
 // 8. Створити масив з будь-якими значеннями (стрінги, числа, і тд…). пройтись по ньому, і, якщо елемент є числом, додати його в інший масив.
+
+
+let numberArray = [];
+
+let differentValuesArray = [2,17,13,'begin','the end',true,false,'docker',100,-18];
+
+for (let i = 0; i < differentValuesArray.length; i++) {
+ if (typeof differentValuesArray[i] === 'number') {
+  numberArray.push(differentValuesArray[i]);
+}
+ }
+console.log(numberArray);
+
+
 //
-//
-//
-//
-//
-//
-//
-// – Дано 2 масиви з рівною кількістю об’єктів.
+// – Дано 2 масиви з рівною кількістю об'єктів.
 //
 //     Масиви:
 //
 // let usersWithId = [
 //
-//     {id: 1, name: ‘vasya’, age: 31, status: false},
+//     {id: 1, name: 'vasya', age: 31, status: false},
 //
-// {id: 2, name: ‘petya’, age: 30, status: true},
+// {id: 2, name: 'petya', age: 30, status: true},
 //
-// {id: 3, name: ‘kolya’, age: 29, status: true},
+// {id: 3, name: 'kolya', age: 29, status: true},
 //
-// {id: 4, name: ‘olya’, age: 28, status: false}
+// {id: 4, name: 'olya', age: 28, status: false}
 //
 // ];
 //
@@ -457,21 +594,21 @@ console.log(books);
 //
 // let citiesWithId = [
 //
-//     {user_id: 3, country: ‘USA’, city: ‘Portland’},
+//     {user_id: 3, country: 'USA', city: 'Portland'},
 //
-// {user_id: 1, country: ‘Ukraine’, city: ‘Ternopil’},
+// {user_id: 1, country: 'Ukraine', city: 'Ternopil'},
 //
-// {user_id: 2, country: ‘Poland’, city: ‘Krakow’},
+// {user_id: 2, country: 'Poland', city: 'Krakow'},
 //
-// {user_id: 4, country: ‘USA’, city: ‘Miami’}
+// {user_id: 4, country: 'USA', city: 'Miami'}
 //
 // ];
 //
 //
 //
-// З’єднати в один об’єкт користувача та місто з відповідними “id” та “user_id” .
+// З'єднати в один об'єкт користувача та місто з відповідними “id” та “user_id” .
 //
-// Записати цей об’єкт в новий масив
+// Записати цей об'єкт в новий масив
 //
 // Example:
 //
@@ -481,7 +618,7 @@ console.log(books);
 //
 //             id: 1, // <===
 //
-//             name: ‘vasya’,
+//             name: 'vasya',
 //
 // age: 31,
 //
@@ -491,9 +628,9 @@ console.log(books);
 //
 //     user_id: 1, // <===
 //
-//         country: ‘Ukraine’,
+//         country: 'Ukraine',
 //
-//     city: ‘Ternopil’
+//     city: 'Ternopil'
 //
 // }
 //
@@ -503,29 +640,102 @@ console.log(books);
 //
 // ]
 //
-//
-//
-//
-//
-//
-//
-//
+
+    let usersWithId1 = [
+
+     {id: 1, name: 'vasya', age: 31, status: false},
+
+     {id: 2, name: 'petya', age: 30, status: true},
+
+     {id: 3, name: 'kolya', age: 29, status: true},
+
+     {id: 4, name: 'olya', age: 28, status: false}
+
+    ];
+    let citiesWithId1 = [
+
+     {user_id: 3, country: 'USA', city: 'Portland'},
+
+     {user_id: 1, country: 'Ukraine', city: 'Ternopil'},
+
+     {user_id: 2, country: 'Poland', city: 'Krakow'},
+
+     {user_id: 4, country: 'USA', city: 'Miami'}
+
+    ];
+
+   let usersWithCities = [];
+    for (const user of usersWithId1) {
+     let city = citiesWithId1.find(city => city.user_id === user.id);
+     if (city) {
+      usersWithCities.push({
+       ...user,
+       address: city
+      });
+     }
+
+    }
+    console.log(usersWithCities);
+
+
+
 //
 // – Взяти масив з 10 чисел або створити його. Вивести в консоль тільки ті елементи, значення яких є парними.
 //
-//
+
+let asdArray =  [100,255,50,168,121,345,188,520,363,400];
+for (let i = 0; i < asdArray.length; i++) {
+ if(asdArray[i] % 2 === 0)
+ console.log(asdArray[i]);
+}
+
+
 //
 // – Взяти масив з 10 чисел або створити його. Створити 2-й порожній масив. За допомогою будь-якого циклу скопіювати значення одного масиву в інший.
+
+
+let arr1 = [100,255,50,168,121,345,188,520,363,400];
+let arr2 = [];
+for (let i = 0; i < arr1.length; i++) {
+ arr2.push(arr1[i]);
+}
+console.log(arr2);
+
+let arr3 = [100,255,50,168,121,345,188,520,363,400];
+let arr4 = [];
+for (const element of arr3) {
+ arr4.push(element);
+}
+console.log(arr4);
+
 //
 //
+// – Дано масив: [ 'a', 'b', 'c'] . За допомогою циклу for зібрати всі букви в слово.
+
+let arrString = ['a','b','c','d','e','f'];
+let word ='';
+for (let i = 0; i < arrString.length; i++) {
+ word += arrString[i];
+}
+console.log(word);
+
 //
+// – Дано масив: [ 'a', 'b', 'c'] . За допомогою циклу while зібрати всі букви в слово.
+
+let arrString1 = ['a','b','c','d','e','f'];
+let i = 0;
+word1 = '';
+while(i < arrString1.length ){
+ word1 += arrString1[i];
+ i++;
+}
+console.log(word1);
+
 //
-//
-// – Дано масив: [ ‘a’, ‘b’, ‘c’] . За допомогою циклу for зібрати всі букви в слово.
-//
-// – Дано масив: [ ‘a’, ‘b’, ‘c’] . За допомогою циклу while зібрати всі букви в слово.
-//
-// – Дано масив: [ ‘a’, ‘b’, ‘c’] . За допомогою циклу for of зібрати всі букви в слово.
-//
-//     Попередній
-// Завершити та наступний
+// – Дано масив: [ 'a', 'b', 'c'] . За допомогою циклу for of зібрати всі букви в слово.
+let arrString2 = ['a','b','c','d','e','f'];
+let word2 = '';
+for (const string of arrString2) {
+ word2 += string;
+}
+console.log(word2);
