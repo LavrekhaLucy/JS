@@ -680,3 +680,7 @@ for (let product of products) {
 
     }
     document.write(`</div>`);
+
+
+// let w = 5;
+// console.log(++w, w++);
