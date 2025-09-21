@@ -213,7 +213,13 @@ console.log(sumAll([2,56,4,20,39]));
 // Приклад  swap([11,22,33,44],0,1) //=> [22,11,33,44]
 //
 //
+function swap (arr, index1, index2) {
+    [arr[index1], arr[index2]] = [arr[index2], arr[index1]] ;
 
+    return arr;
+}
+let numbers = swap([11,22,33,44,],0,1);
+console.log(numbers);
 
 
 
@@ -222,5 +228,23 @@ console.log(sumAll([2,56,4,20,39]));
 // #mkGDenYnNjn.html
 //
 // Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
-//
+
 // Приклад exchange(10000,[{currency:’USD’,value:25},{currency:’EUR’,value:42}],’USD’) // => 400
+
+
+function exchange (sumUAH,currencyValues,exchangeCurrency) {
+    let currency;
+    for (const item of currencyValues) {
+        if (item.currency === exchangeCurrency) {
+            currency = item;
+        }
+    } return sumUAH/currency.value;
+}
+console.log(exchange(10000,[{currency:'USD',value:25},{currency:'EUR',value:42}],'USD'));
+
+
+
+
+
+
+
