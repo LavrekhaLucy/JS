@@ -167,21 +167,18 @@ console.log(coursesAndDurationArray);
 let filter = coursesAndDurationArray.filter(value => value.monthDuration > 5);
 console.log(filter);
 
-//  — за допомоги map перетворити кожен елемент на наступний тип {id, title, monthDuration}
-// let newArray = coursesAndDurationArray.map(
-//     function (value, index) {
-//         let obj =  {
-//             id: index + 1,
-//             title:value.title,
-//             monthDuration: value.monthDuration,
-//         }
-//         return obj;
-//     }
-// );
-// console.log(newArray);
-
-
-
+ // — за допомоги map перетворити кожен елемент на наступний тип {id, title, monthDuration}
+let newArray = coursesAndDurationArray.map(
+    function (value, index) {
+        let obj =  {
+            id: index + 1,
+            title:value.title,
+            monthDuration: value.monthDuration,
+        }
+        return obj;
+    }
+);
+console.log(newArray);
 
 
 //
@@ -307,22 +304,53 @@ console.log(docker);
 //
 // }
 //
-let suits = ['spade','diamond','heart','clubs'];
-let  values=  ['6','7','8','9','10', 'ace', 'jack', 'queen', 'king'];
+let suits = [{cardSuit: 'spade'}, {cardSuit: 'diamond'}, {cardSuit: 'heart'},{cardSuit: 'clubs'}];
+let  values=  [{value: '6'}, {value: '7'}, {value: '8'}, {value: '9'}, {value: '10'}, {value: 'ace'}, {value: 'jack'}, {value: 'queen'}, {value: 'king'}];
 
 let deckOfCard = [];
 for (const suit of suits) {
     for (let value of values) {
-        let color = (suit === 'diamond' || suit === 'heart') ? 'red' : 'black'
-        deckOfCard.push(suit, value,color)
+        let color = (suit.cardSuit === 'diamond' || suit.cardSuit === 'heart') ? 'red' : 'black';
+        deckOfCard.push({
+            cardSuit: suit.cardSuit,
+            value:value.value,
+            color:color
+        })
     }
 
 }
 console.log(deckOfCard);
+  // – знайти піковий туз
+let aceSpade =deckOfCard.find(card =>card.cardSuit === 'spade' && card.value === 'ace');
+console.log('Ace Spade:',aceSpade);
 
-// console.log(deckOfCard.find(value =>value.cardSuit === 'spade' && value.value === 'ace' ));
+//  – всі шістки
+let allSix= deckOfCard.filter(card => card.value === '6');
+console.log(allSix);
 //
+//  – всі червоні карти
+
+let allRed = deckOfCard.filter(card => card.color === 'red');
+console.log(allRed);
+
 //
+//  – всі буби
+
+let allDiamond = deckOfCard.filter(card => card.cardSuit === 'diamond');
+console.log(allDiamond);
+//
+//  – всі трефи від 9 та більше
+//
+
+let order = ['6','7','8','9','10','jack','queen','king','ace'];
+
+ function findCards (deck, suit, index) {
+     return deck.filter(card => card.cardSuit === suit
+     && order.indexOf(card.value) >= order.indexOf(index));
+ }
+console.log(findCards(deckOfCard,'clubs','9'))
+
+
 
 
 
@@ -344,3 +372,33 @@ console.log(deckOfCard);
 //     clubs:[]
 //
 // }
+
+let newDeck = deckOfCard;
+ console.log(newDeck);
+
+const reduce = newDeck.reduce((accum, card) =>{
+
+    switch(card.cardSuit){
+        case 'spade':
+            accum.spades.push(card.value);
+        break;
+        case 'diamond':
+            accum.diamonds.push(card.value);
+            break;
+            case 'heart':
+                accum.hearts.push(card.value);
+                break;
+                case 'clubs':
+                    accum.clubs.push( card.value);
+                    break;
+
+
+    }
+    return accum;
+},{
+    spades:[], diamonds:[], hearts:[], clubs:[]
+});
+console.log(reduce);
+
+
+
