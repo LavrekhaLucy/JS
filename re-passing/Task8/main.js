@@ -49,31 +49,78 @@ console.log(newArr);
 //
 //         Подумати і реалізувати логіку, в якій кінцевий об’єкт буде мати функції, які в нього були до цього моменту.
 //
+
+
+// function cloner(obj) {
+//     if (obj) {
+//         let functions = [];
+//         for (const key in obj) {
+//             if (typeof obj[key] === 'function') {
+//                 const functionClone = obj[key].bind({});
+//                 functions.push({functionClone, key});
+//             }
+//         }
+//         const cloneObj = JSON.parse(JSON.stringify(obj));
+//         for (const func of functions) {
+//             cloneObj[func.key] = func.functionClone;
+//         }
+//
+//         console.log(cloneObj);
+//         return cloneObj
+//
+//     }
+//
+//     throw new Error('!!!!!');
+//
+// }
+//
+// const clone = cloner({id: 123, name: 'asdsad', greeting() {console.log('hello')}, foo() {console.log('bar')}});
+// clone.foo();
+
 function cloner(obj) {
-    if (obj) {
-        let functions = [];
-        for (const key in obj) {
-            if (typeof obj[key] === 'function') {
-                const functionClone = obj[key].bind({});
-                functions.push({functionClone, key});
-            }
-        }
-        const cloneObj = JSON.parse(JSON.stringify(obj));
-        for (const func of functions) {
-            cloneObj[func.key] = func.functionClone;
-        }
-
-        console.log(cloneObj);
-        return cloneObj
-
+    // Перевірки
+       if (obj === null || typeof obj !== 'object') {
+        return obj;
+    }
+    // Якщо масив → клонувати як масив
+    if (Array.isArray(obj)) {
+        return obj.map(el => cloner(el));
     }
 
-    throw new Error('!!!!!');
+    // Якщо це об’єкт → клонувати рекурсивно
+    if (typeof obj === 'object') {
+        const cloneObj = {};
+        for (const key in obj) {
+            if (typeof obj[key] === 'function') {
+                // Зберігаємо функцію як є (не bind!)
+                cloneObj[key] = obj[key];
+            } else {
+                cloneObj[key] = cloner(obj[key]);
+            }
+        }
+        return cloneObj;
+    }
 
+    // Якщо примітив → повертаємо напряму
+    return obj;
 }
 
-const clone = cloner({id: 123, name: 'asdsad', greeting() {console.log('hello')}, foo() {console.log('bar')}});
+// Тест
+const original = {
+    id: 123,
+    name: 'asdsad',
+    greeting() { console.log('hello', this.name); },
+    foo() { console.log('bar'); },
+    nested: { x: 10, y: NaN }
+};
+
+const clone = cloner(original);
+
+console.log(clone);
+clone.greeting(); // має працювати
 clone.foo();
+console.log(clone.nested);
+
 
 
 
