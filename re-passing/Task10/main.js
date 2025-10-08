@@ -10,7 +10,6 @@ document.getElementById('btn').onclick = function () {
 }
 
 
-
 //
 //
 //
@@ -23,9 +22,8 @@ document.getElementById('btn').onclick = function () {
 
 document.getElementById('enter').onclick = function () {
     const age = document.getElementById('ageInput').value;
-     document.getElementById('result').innerText= age >= 18? 'Adult' :'Kids'
+    document.getElementById('result').innerText = age >= 18 ? 'Adult' : 'Kids'
 }
-
 
 
 //
@@ -37,12 +35,16 @@ document.getElementById('enter').onclick = function () {
 
 document.getElementById('submit').onclick = function () {
     const myForm = document.getElementById('form');
+    const user = {
+        name: myForm.name.value,
+        surname: myForm.surname.value,
+        age: myForm.age.value
+    }
 
-    document.getElementById('result').innerText= info;
+
+    document.getElementById('info').innerText = JSON.stringify(user, null, 2);
 
 }
-
-
 
 //
 //
@@ -51,23 +53,52 @@ document.getElementById('submit').onclick = function () {
 //
 // є сторінка, на якій є блок, в кому знаходиться цифра. Написати код, який при кожному перезавантажені сторінки буде додавати до неї +1
 //
+
+let addNumber =+localStorage.getItem("number");
+addNumber +=1;
+localStorage.setItem("number", addNumber);
+document.getElementById('block').innerText = addNumber;
+
+ document.getElementById('submit2').onclick = function () {
+        localStorage.clear();
+        document.getElementById('block').innerText = 0;
+ }
+
+
+
 //
 //
 // #LhSfdhM3
 //
 // Є сторінка index.html (назва довільна), при відвідуванні якої в локальне сховище, в масив sessionsList зберігається інформація про дату та час відвідування сторінки. Є  сторінка sessionsListPage.html (назва довільна), при відвідуванні якої потрібно відмалювати всю інформацію про відвідування сторінки index.html. Інфу НЕ виводити в консоль, а малювати в DOM
 //
-//
-//
-//
-//
-//
+
+
+
+
+
+
+
+
+
 //
 // #Jg0gPO00
 //
 // створити конвертор ваги з кг в фунти. дані заповнюються через інпут. При введенні даних обрахунок стається миттєво, без натискань додаткових кнопок
 //
 //
+
+const inputKg = document.getElementById('converter-kg');
+const resultDivPd = document.getElementById('converter-pd');
+inputKg.oninput = function (){
+    const kilogram=+this.value;
+    resultDivPd.innerText = kilogram * 2.20462;
+};
+
+
+
+
+
 //
 // #RbQGnH5DuC
 //

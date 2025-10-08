@@ -8,17 +8,48 @@
     <title>Lesson 10</title>
 
     <style>
+        body{
+            padding: 20px;
+
+        }
         div.text{
             height: 200px;
             width: 200px;
             background: aqua;
             margin: 10px;
+            padding: 20px;
 
         }
         #btn{
             width: 200px;
             height: 40px;
             margin: 13px;
+        }
+        .form{
+            width: 200px;
+            display: flex;
+            padding: 20px;
+        }
+        .form input{
+            margin: 5px;
+        }
+        #info {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 6px;
+            margin-top: 10px;
+        }
+        #block{
+            width: 200px;
+            height: 200px;
+            background: darksalmon;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        #convert{
+            padding: 20px;
         }
     </style>
 </head>
@@ -37,20 +68,29 @@
 
 <!--------------------------------------------------------->
 
-<form id="form">
-    <input type="text" id="name" placeholder="Name"/>
-    <input type="text" id="surname" placeholder="Surname"/>
-    <input type="text" id="age" placeholder="Age"/>
-    <input type="button" id="submit" value="Submit"/>
-    <p id="info">Info</p>
-</form>
+<div class="form">
+    <form id="form">
+        <input type="text" id="name" placeholder="Name"/>
+        <input type="text" id="surname" placeholder="Surname"/>
+        <input type="text" id="age" placeholder="Age"/>
+        <input type="button" id="submit" value="Submit"/>
 
+        <p id="info">Info</p>
+    </form>
 
-
-
-
+</div>
 <!--------------------------------------------------------->
+<div id="block"></div>
 
+<button id="submit2">Reset</button>
+<!-------------------------------------------------------->
+<div id="convert">
+    <label for="converter-kg">kilogram</label>
+    <input id="converter-kg" type="text">
+    <p id="outputPound">pound</p>
+    <div id="converter-pd"></div>
+</div>
+<!--------------------------------------------------------->
 
 <script src="main.js"></script>
 
