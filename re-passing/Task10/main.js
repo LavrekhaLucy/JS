@@ -73,6 +73,38 @@ document.getElementById('block').innerText = addNumber;
 // Є сторінка index.html (назва довільна), при відвідуванні якої в локальне сховище, в масив sessionsList зберігається інформація про дату та час відвідування сторінки. Є  сторінка sessionsListPage.html (назва довільна), при відвідуванні якої потрібно відмалювати всю інформацію про відвідування сторінки index.html. Інфу НЕ виводити в консоль, а малювати в DOM
 //
 
+// --- Логіка запису в Local Storage ---
+
+const STORAGE_KEY = 'sessionsList';
+
+function recordVisit() {
+    // 1. Створюємо об'єкт для поточного відвідування
+    const now = new Date();
+    const visitData = {
+        timestamp: now.getTime(), // Час у мілісекундах для сортування
+        dateTime: now.toLocaleString('uk-UA', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit'
+        })
+    };
+
+    // 2. Отримуємо існуючий список
+    //    JSON.parse() перетворює рядок на масив. Якщо його немає, використовуємо порожній масив [].
+    const existingSessions = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+
+    // 3. Додаємо нове відвідування на початок масиву (для відображення найновіших першими)
+    existingSessions.unshift(visitData);
+
+    // 4. Зберігаємо оновлений масив назад у Local Storage (конвертуючи назад у рядок)
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(existingSessions));
+}
+
+// Записуємо інформацію про відвідування одразу після завантаження DOM
+document.addEventListener('DOMContentLoaded', recordVisit);
 
 
 

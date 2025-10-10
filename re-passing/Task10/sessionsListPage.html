@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Історія відвідувань</title>
+    <style>
+        /* Стилі для кращого відображення списку */
+        #sessionsContainer {
+            margin-top: 20px;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+<h1>Історія відвідувань сторінки index.html</h1>
+
+<div id="sessionsContainer">
+    <p id="loadingStatus">Завантаження історії...</p>
+</div>
+
+<a href="index.html">Повернутися на головну</a>
+
+<script>
+    // --- Логіка відображення ---
+
+    const STORAGE_KEY = 'sessionsList';
+    const container = document.getElementById('sessionsContainer');
+
+    function renderSessions() {
+        // 1. Отримуємо та парсимо дані (або використовуємо порожній масив)
+        const sessionsString = localStorage.getItem(STORAGE_KEY);
+        const sessions = sessionsString ? JSON.parse(sessionsString) : [];
+
+        // 2. Очищуємо контейнер від будь-якого попереднього контенту (включаючи "Завантаження")
+        container.innerHTML = '';
+
+        if (sessions.length === 0) {
+            // Якщо масив порожній, відображаємо повідомлення
+            container.innerHTML = '<p>Історія відвідувань поки що відсутня.</p>';
+            return;
+        }
+
+        // 3. Створюємо список (UL)
+        const ul = document.createElement('ul');
+
+        // 4. Перебираємо масив і створюємо елементи DOM
+        sessions.forEach((session, index) => {
+            const li = document.createElement('li');
+            li.classList.add('session-item');
+
+            // Вставляємо відформатовану дату та час
+            li.textContent = `${index + 1}. ${session.dateTime}`;
+
+            ul.appendChild(li);
+        });
+
+        // 5. Додаємо готовий список у контейнер
+        container.appendChild(ul);
+    }
+
+    // Запускаємо відображення після завантаження DOM
+    document.addEventListener('DOMContentLoaded', renderSessions);
+</script>
+</body>
+</html>
